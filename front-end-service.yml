@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: front-end-service
+  labels:
+    name: front-end-service
+    app: frond-end-app
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+    name: front-end-pod
+    app: front-end-app
